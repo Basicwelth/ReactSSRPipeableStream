@@ -1,0 +1,29 @@
+$font-stack: Helvetica, sans-serif;
+$black: #333333;
+$blue: blue;
+html {
+	font: 1vmin $font-stack;
+}
+
+body {
+	color: $black;
+}
+
+@mixin autoprefixer-test {
+	user-select: none;
+}
+
+.autoprefixer-test {
+	@include autoprefixer-test;
+	color: $blue;
+}
+
+.blue {
+	color: $blue;
+}
+
+.black {
+	color: $black;
+}
+
+@import "~semantic-ui-css/semantic.css";
