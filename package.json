@@ -7,46 +7,58 @@
     "node": "16"
   },
   "dependencies": {
-    "@babel/core": "7.14.3",
-    "@babel/preset-env": "^7.19.3",
-    "@babel/preset-react": "^7.18.6",
-    "@babel/register": "7.13.16",
-    "@reduxjs/toolkit": "^1.8.5",
-    "@semantic-ui-react/css-patch": "^1.1.2",
-    "autoprefixer": "^10.4.12",
-    "babel-loader": "8.1.0",
-    "compression": "^1.7.4",
-    "css-loader": "^6.7.1",
-    "express": "^4.18.1",
-    "mini-css-extract-plugin": "^2.6.1",
-    "node-sass": "^7.0.3",
-    "nodemon": "^2.0.20",
-    "npm-run-all": "^4.1.5",
-    "postcss-loader": "^7.0.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-error-boundary": "^3.1.4",
-    "react-redux": "^8.0.4",
-    "redux-saga": "^1.2.1",
-    "rimraf": "^3.0.2",
-    "sass": "^1.55.0",
-    "sass-loader": "^13.1.0",
-    "semantic-ui-css": "^2.5.0",
-    "semantic-ui-react": "^2.1.3",
-    "url-loader": "^4.1.1",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
+    "bundle-deps": "~1.0",
+    "chokidar": "~3.5",
+    "compression": "~1.7",
+    "cross-env": "~7.0",
+    "exenv": "~1.2",
+    "express": "~4.18",
+    "node-fetch": "~3.3",
+    "nodemon": "~2.0",
+    "npm-run-all": "~4.1",
+    "polyfill-library": "~4.7"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3"
+    "@babel/core": "~7.14",
+    "@babel/preset-env": "~7.19",
+    "@babel/preset-react": "~7.18",
+    "@babel/register": "~7.13",
+    "@reduxjs/toolkit": "~1.8",
+    "@semantic-ui-react/css-patch": "~1.1",
+    "autoprefixer": "~10.4",
+    "babel-loader": "~8.1",
+    "css-loader": "~6.7",
+    "css-minimizer-webpack-plugin": "~4.2",
+    "imask": "~4.1",
+    "mini-css-extract-plugin": "~2.6",
+    "moment": "~2.29",
+    "postcss-loader": "~7.0",
+    "react": "~18.2",
+    "react-dom": "~18.2",
+    "react-error-boundary": "~3.1",
+    "react-imask": "~6.4",
+    "react-redux": "~8.0",
+    "react-router": "~6.4",
+    "react-router-dom": "~6.4",
+    "redux-saga": "~1.2",
+    "resolve-url-loader": "~5.0",
+    "rimraf": "~3.0",
+    "sass": "~1.55",
+    "sass-loader": "~13.1",
+    "semantic-ui-css": "~2.5",
+    "semantic-ui-react": "~2.1",
+    "style-loader": "~3.3",
+    "url-loader": "~4.1",
+    "webpack": "~5.76",
+    "webpack-cli": "~4.10"
   },
   "scripts": {
     "dev": "npm-run-all --parallel dev:*",
     "prod": "npm-run-all --parallel prod:*",
     "dev:bundler": "cross-env NODE_ENV=development nodemon -- scripts/build.js",
     "prod:bundler": "cross-env NODE_ENV=production nodemon -- scripts/build.js",
-    "dev:server": "cross-env NODE_ENV=development nodemon -- server/server.js",
-    "prod:server": "cross-env NODE_ENV=production nodemon -- server/server.js",
+    "dev:server": "cross-env NODE_ENV=development nodemon --watch build -- server/server.js",
+    "prod:server": "cross-env NODE_ENV=production nodemon --watch build -- server/server.js",
     "postinstall": "semantic-ui-css-patch"
   },
   "babel": {
@@ -67,17 +79,41 @@
   },
   "browserslist": {
     "production": [
-      "> 0.5% in RU",
-      "last 30 major versions",
+      "> 90% in RU",
+      "last 10 versions",
       "not dead"
     ],
     "development": [
       "> 90% in RU",
-      "last 10 major versions",
+      "last 10 versions",
       "not dead"
     ],
     "ssr": [
       "node 16"
     ]
-  }
+  },
+  "bundledDependencies": [
+    "node-fetch",
+    "nodemon",
+    "npm-run-all",
+    "polyfill-library",
+    "bundle-deps",
+    "chokidar",
+    "compression",
+    "cross-env",
+    "exenv",
+    "express"
+  ],
+  "bundleDependencies": [
+    "node-fetch",
+    "nodemon",
+    "npm-run-all",
+    "polyfill-library",
+    "bundle-deps",
+    "chokidar",
+    "compression",
+    "cross-env",
+    "exenv",
+    "express"
+  ]
 }
