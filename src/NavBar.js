@@ -1,7 +1,1 @@
-export const NavBar = () => {
-	return (
-		<nav>
-			<a href="/">Home</a>
-		</nav>
-	);
-}
+export const NavBar = () => <nav><a href="/">Home</a></nav>;
