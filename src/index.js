@@ -1,4 +1,9 @@
 import { hydrateRoot } from 'react-dom/client';
-import { App } from './App';
+import { BrowserRouter } from 'react-router-dom';
+import { RoutesConfig } from './RoutesConfig';
 
-hydrateRoot(document, <App assets={window.assets} />);
+hydrateRoot(document, (
+  <BrowserRouter>
+	<RoutesConfig />
+  </BrowserRouter>
+));
